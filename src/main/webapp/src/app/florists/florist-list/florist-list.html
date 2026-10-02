@@ -1,0 +1,40 @@
+<section class="page-section">
+  <div class="page-heading">
+    <div>
+      <p class="eyebrow">OUR FLORAL COMMUNITY</p>
+      <h1>Meet the florists</h1>
+      <p>The creative hands behind every beautiful bloom.</p>
+    </div>
+    <a class="button" routerLink="/floristAdd">＋ Add florist</a>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <caption class="sr-only">
+        Florist directory
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Florist name</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (florist of floristService.florists(); track florist.id) {
+          <tr>
+            <td class="muted">#{{ florist.id }}</td>
+            <td class="record-name">{{ florist.name }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="2" class="empty-state">
+              <span aria-hidden="true">✳</span>
+              <h3>Make room for new talent.</h3>
+              <p>Once loaded, your florists will appear here. Welcome a florist to get started.</p>
+              <a routerLink="/floristAdd" class="text-link">Add your first florist →</a>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

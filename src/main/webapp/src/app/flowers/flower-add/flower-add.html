@@ -1,0 +1,62 @@
+<section class="form-layout">
+  <aside class="form-photo">
+    <img src="images/roses.jpg" alt="A collection of soft pink roses" />
+    <div>
+      <p class="eyebrow">A FRESH ADDITION</p>
+      <h2>Room for<br />one more bloom.</h2>
+    </div>
+  </aside>
+  <div class="form-content">
+    <p class="eyebrow">GROW YOUR COLLECTION</p>
+    <h1>Add a flower</h1>
+    <p>Give your newest bloom a home in the collection.</p>
+    <form #flowerForm="ngForm" (ngSubmit)="saveFlower()">
+      <label for="name">Flower name</label
+      ><input
+        id="name"
+        name="name"
+        placeholder="e.g. Garden rose"
+        [(ngModel)]="flower.name"
+        required
+        maxlength="100"
+      />
+      <div class="field-row">
+        <div>
+          <label for="price">Price (CAD)</label
+          ><input
+            id="price"
+            name="price"
+            type="number"
+            min="0"
+            step="0.01"
+            [(ngModel)]="flower.price"
+            required
+          />
+        </div>
+        <div>
+          <label for="quantity">Quantity</label
+          ><input
+            id="quantity"
+            name="quantity"
+            type="number"
+            min="0"
+            step="1"
+            [(ngModel)]="flower.quantity"
+            required
+          />
+        </div>
+      </div>
+      <label for="floristName">Florist</label
+      ><select id="floristName" name="floristName" [(ngModel)]="flower.floristName" required>
+        <option value="" disabled>Select a florist</option>
+        @for (florist of floristService.florists(); track florist.id) {
+          <option [value]="florist.name">{{ florist.name }}</option>
+        }
+      </select>
+      <p class="field-help">Choose the florist who supplies this flower.</p>
+      <button class="button" type="submit" [disabled]="flowerForm.invalid">
+        Add to collection →
+      </button>
+    </form>
+  </div>
+</section>

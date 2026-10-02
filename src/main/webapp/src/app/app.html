@@ -1,0 +1,24 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" routerLink="/" aria-label="Bloom & Stem home"
+    ><span class="brand-mark" aria-hidden="true">✳</span
+    ><span>Bloom <i>&</i> Stem<small>THE FLORAL STUDIO</small></span></a
+  >
+  <nav aria-label="Main navigation">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ariaCurrentWhenActive="page"
+      >Home</a
+    >
+    <a routerLink="/flowers" routerLinkActive="active" ariaCurrentWhenActive="page">Flowers</a>
+    <a routerLink="/florists" routerLinkActive="active" ariaCurrentWhenActive="page">Florists</a>
+  </nav>
+  <a class="button header-action" routerLink="/flowerAdd">＋ Add a flower</a>
+</header>
+<main id="main-content" tabindex="-1"><router-outlet /></main>
+<footer class="site-footer">
+  <span class="footer-brand">Bloom & Stem</span><span>A little beauty. A little everyday joy.</span
+  ><span>Created by Shrusti Shah</span>
+</footer>

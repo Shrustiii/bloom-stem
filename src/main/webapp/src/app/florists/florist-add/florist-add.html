@@ -1,0 +1,28 @@
+<section class="form-layout">
+  <aside class="form-photo">
+    <img src="images/lavender.jpg" alt="Lavender stems against a soft ivory background" />
+    <div>
+      <p class="eyebrow">BETTER TOGETHER</p>
+      <h2>Good things<br />grow with people.</h2>
+    </div>
+  </aside>
+  <div class="form-content">
+    <p class="eyebrow">GROW YOUR COMMUNITY</p>
+    <h1>Welcome a florist</h1>
+    <p>Add a new creative partner to your floral directory.</p>
+    <form #floristForm="ngForm" (ngSubmit)="saveFlorist()">
+      <label for="name">Florist name</label
+      ><input
+        id="name"
+        name="name"
+        placeholder="e.g. The Garden Studio"
+        [(ngModel)]="florist.name"
+        required
+        maxlength="100"
+      />
+      <p class="field-help">Use the florist’s name or their studio name.</p>
+      <button class="button" type="submit" [disabled]="floristForm.invalid">Add florist →</button>
+    </form>
+    <a class="text-link form-back" routerLink="/floristView">← Back to florists</a>
+  </div>
+</section>

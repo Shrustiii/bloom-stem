@@ -1,0 +1,58 @@
+<section class="page-section">
+  <div class="page-heading">
+    <div>
+      <p class="eyebrow">THE COLLECTION</p>
+      <h1>Flowers in bloom</h1>
+      <p>Your flower inventory, all in one place.</p>
+    </div>
+    <a class="button" routerLink="/flowerAdd">＋ Add flower</a>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <caption class="sr-only">
+        Flower inventory
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Flower</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Florist</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (flower of flowerService.flowers(); track flower.id) {
+          <tr>
+            <td class="muted">#{{ flower.id }}</td>
+            <td class="record-name">{{ flower.name }}</td>
+            <td>{{ flower.price | currency: 'CAD' : 'symbol-narrow' }}</td>
+            <td>
+              <span class="badge">{{ flower.quantity }} stems</span>
+            </td>
+            <td>{{ flower.floristName }}</td>
+            <td>
+              <button
+                class="delete-button"
+                (click)="deleteFlower(flower.id)"
+                [attr.aria-label]="'Delete ' + flower.name"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="6" class="empty-state">
+              <span aria-hidden="true">✳</span>
+              <h3>Your collection is waiting to bloom.</h3>
+              <p>Once loaded, your flowers will appear here. Add a flower to get started.</p>
+              <a routerLink="/flowerAdd" class="text-link">Add your first flower →</a>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

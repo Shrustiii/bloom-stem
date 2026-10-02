@@ -1,0 +1,21 @@
+# indentation matters - not tab --- only 2 spaces
+spring: 
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    database: h2
+  datasource:
+    url: jdbc:h2:mem:testdb
+  sql:
+    init:
+      platform: h2
+
+
+
+#spring.jpa.show-sql=true
+#spring.h2.console.enabled=true
+#spring.datasource.url=jdbc:h2:mem:testdb
+#spring.jpa.database=h2
+#spring.sql.init.platform=h2
