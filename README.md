@@ -2,6 +2,48 @@
 
 A full-stack coursework project by Shrusti Shah for managing flowers and florists. The Angular interface communicates with a Spring Boot REST API backed by an in-memory H2 database.
 
+## App screenshots
+
+### Homepage
+
+A floral landing page with shared navigation and quick access to the collection.
+
+![Bloom & Stem homepage](docs/screenshots/home.png)
+
+### Floral workspace
+
+Quick links for browsing flowers, finding florists, and adding a bloom.
+
+![Floral workspace cards](docs/screenshots/workspace.png)
+
+### Flower collection
+
+![Flower collection overview](docs/screenshots/flowers.png)
+
+Track flower prices in CAD, quantities, and the supplying florist.
+
+![Flower inventory with sample data](docs/screenshots/flower-inventory.png)
+
+Add flowers through a labeled form with price, quantity, and florist selection.
+
+![Add a flower form](docs/screenshots/add-flower.png)
+
+### Florist community
+
+![Florist community overview](docs/screenshots/florists.png)
+
+Browse the florist directory and welcome new creative partners.
+
+![Florist directory with sample data](docs/screenshots/florist-directory.png)
+
+![Add a florist form](docs/screenshots/add-florist.png)
+
+### Finishing details
+
+A floral call to action and a footer crediting the project creator.
+
+![Floral call to action and footer](docs/screenshots/footer.png)
+
 ## Features
 
 - View and add florists.
